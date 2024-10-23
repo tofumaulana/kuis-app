@@ -29,7 +29,7 @@ Route::middleware([
     // })->name('admin.options.create');
 });
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
+// Route::middleware(['auth', 'role:admin'])->group(function () {
 // category
 Route::resource('categories', CategoryController::class);
 Route::get('/admin/categories/index', [CategoryController::class, 'index'])->name('admin.categories.index');
@@ -62,7 +62,10 @@ Route::get('/admin/results/index', [ResultController::class, 'index'])->name('ad
 Route::get('/admin/results/show/{id}', [ResultController::class, 'show'])->name('admin.results.show');
 Route::delete('/admin/results/{id}', [ResultController::class, 'destroy'])->name('admin.results.destroy');
 
-});
+// });
+
+
+// Route::middleware(['auth', 'role:client'])->group(function () {
 
 Route::get('client/index', [\App\Http\Controllers\ResultController::class, 'index'])->name('client.index');
 
@@ -71,5 +74,5 @@ Route::get('client/index', [\App\Http\Controllers\ResultController::class, 'inde
 Route::get('dashboard', [TestController::class, 'index'])->name('dashboard');
 Route::post('dashboard', [TestController::class, 'store'])->name('client.test.store');
 Route::get('results/{result_id}', [\App\Http\Controllers\ResultController::class, 'show'])->name('client.results.show');
-
+// });
 
