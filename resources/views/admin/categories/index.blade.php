@@ -100,7 +100,7 @@
 
     <div class="py-12">
         <div class="table-container shadow-md sm:rounded-lg">
-            <div class="p-10">
+            <div class="">
                 <a href="{{ route('admin.categories.create') }}" class="button-create">
                     + Buat Data
                 </a>
